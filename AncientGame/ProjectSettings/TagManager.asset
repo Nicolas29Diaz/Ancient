@@ -3,16 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Battery
+  - Bullet
+  - Stone
+  - CanLift
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grabbable
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Grabbed
   - 
   - 
   - 
