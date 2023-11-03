@@ -16,16 +16,23 @@ public class Telekinesis : MonoBehaviour
 
     private Transform holdArea = null;
 
+    public float scrollSpeed = 1.0f;
+    public float rotationSpeed = 30.0f;
+
 
     private void Update()
     {
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * pickupRange, Color.red);
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange, layerMask))
             {
                 PickUp(hit.transform.gameObject);
+
             }
+            
         }
         else if (Input.GetMouseButtonUp(0) && heldObj != null)
         {
@@ -34,7 +41,19 @@ public class Telekinesis : MonoBehaviour
 
         if (heldObj != null)
         {
+            RotateObject();
             Move();
+
+            // Scroll del mouse para acercar o alejar el objeto
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            
+            if (scroll != 0)
+            {
+                ScrollObject(scroll);
+            }
+
+            // Rotación del objeto mientras lo sujetas
+           
         }
 
 
@@ -116,4 +135,34 @@ public class Telekinesis : MonoBehaviour
         }
     }
 
+    void ScrollObject(float scroll)
+    {
+        // Calcula la nueva posición deseada
+        Vector3 newPosition = holdArea.position + transform.forward * scroll * scrollSpeed;
+
+        // Calcula la distancia actual entre el objeto y el jugador
+        float distanceToObject = Vector3.Distance(transform.position, holdArea.position);
+
+        // Limita la distancia del scroll hacia adelante
+        if (scroll > 0 && distanceToObject + scroll * scrollSpeed < pickupRange)
+        {
+            holdArea.position = newPosition;
+
+        }
+        // Limita la distancia del scroll hacia atrás
+        else if (scroll < 0 && distanceToObject + scroll * scrollSpeed > 1.5f)
+        {
+            holdArea.position = newPosition;
+
+        }
+
+        // Actualiza la posición de holdArea
+
+    }
+
+    void RotateObject()
+    {
+        float rotationAmount = rotationSpeed * Time.deltaTime;
+        heldObj.transform.Rotate(Vector3.up, rotationAmount);
+    }
 }

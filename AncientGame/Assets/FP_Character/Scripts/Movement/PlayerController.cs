@@ -81,8 +81,8 @@ public class PlayerController : MonoBehaviour
     private bool running = false;
     private bool canRun = true;
     private Vector2 currentInput;
+    private bool rotationHability = true;
 
-    
 
     private void Awake()
     {
@@ -92,27 +92,35 @@ public class PlayerController : MonoBehaviour
         defauktYPos = playerCamera.transform.localPosition.y;
         defauktXPos = playerCamera.transform.localPosition.x;
         actualStamina = maxStamina;
+
     }
 
     
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            rotationHability = !rotationHability;
+        }
         
-        
-            HandleMovement();
-            HandleRotation();
-            UpCollision();
-            HandleCrouching();
-            HandleStamina();
-            if (headBobHability)
-            {
-                HandleHeadBobing();
-            }
-            if (footSoundHability)
-            {
-                HandleFootSteps();
-            }
+        HandleMovement();
+        if (rotationHability){
+              HandleRotation();
+        }
+
+      
+        UpCollision();
+        HandleCrouching();
+        HandleStamina();
+        if (headBobHability)
+        {
+            HandleHeadBobing();
+        }
+        if (footSoundHability)
+        {
+            HandleFootSteps();
+        }
 
         
     }

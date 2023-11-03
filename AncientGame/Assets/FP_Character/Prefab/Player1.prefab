@@ -5845,7 +5845,6 @@ GameObject:
   - component: {fileID: 6639666673389784211}
   - component: {fileID: 6639666673389784219}
   - component: {fileID: 6639666673389784220}
-  - component: {fileID: 2138601315815627599}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -6057,25 +6056,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashLight: {fileID: 6639666673041288434}
---- !u!114 &2138601315815627599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6639666673389784175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f3be4ff1685854d977136d288961d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldObj: {fileID: 0}
-  pickupRange: 5
-  thrownormalForce: 15
-  throwForwardForce: 15
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &6639666673513644922
 GameObject:
   m_ObjectHideFlags: 0
@@ -6333,9 +6313,12 @@ MonoBehaviour:
   pickupRange: 5
   thrownormalForce: 15
   throwForwardForce: 15
+  pickUpForce: 150
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  scrollSpeed: 2
+  rotationSpeed: 30
 --- !u!1 &6639666673747381896
 GameObject:
   m_ObjectHideFlags: 0
