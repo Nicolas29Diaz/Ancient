@@ -85,11 +85,15 @@ public class Telekinesis : MonoBehaviour
             heldObj.transform.parent = holdArea;
 
             heldObj.gameObject.layer = 7; //Pasa a ser grabbed
+
+
         }
     }
 
     void Drop()
     {
+        
+
         heldObj.gameObject.layer = 3; //Pasa a ser grabbable
         heldObjRB.useGravity = true;
         heldObjRB.drag = 1;
@@ -109,8 +113,12 @@ public class Telekinesis : MonoBehaviour
             }
         }
 
+        
+
         // Aplica la fuerza en la dirección del movimiento del mouse al soltar el objeto
         heldObjRB.AddForce(mouseMovementVector * thrownormalForce, ForceMode.Impulse);
+
+        
 
     }
 
