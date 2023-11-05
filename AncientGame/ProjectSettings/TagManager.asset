@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Stone
   - CanLift
+  - RotatingObject
   layers:
   - Default
   - TransparentFX
