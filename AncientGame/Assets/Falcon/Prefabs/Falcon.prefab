@@ -189,11 +189,11 @@ MonoBehaviour:
   headBobHability: 1
   footSoundHability: 1
   gravity: -9.81
-  flySpeed: 6
-  moveUp: 0.5
-  moveDown: -0.5
+  flySpeed: 10
+  moveUp: 1
+  moveDown: -1
   verticalVelocity: 0
-  actualStamina: 0
+  actualStamina: 50
   velRegainStamina: 1
   maxStamina: 50
   rotationSensitivity: 2
@@ -205,11 +205,13 @@ MonoBehaviour:
   flyFrequencyBobX: 0
   iddleBobAmplitudeX: 0
   iddleFrequencyBobX: 0
-  flyBobAmplitudeY: 0.05
-  flyFrequencyBobY: 0.8
-  iddleBobAmplitudeY: 0.08
+  flyBobAmplitudeY: 0.5
+  flyFrequencyBobY: 1
+  iddleBobAmplitudeY: 0.7
   iddleFrequencyBobY: 0.5
   baseStepSpeed: 0.5
+  horizontalInput: 0
+  verticalInput: 0
 --- !u!114 &7234441446390771260
 MonoBehaviour:
   m_ObjectHideFlags: 0

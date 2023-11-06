@@ -126,14 +126,15 @@ public class FalconController : MonoBehaviour
 
     }
 
-
+    public float horizontalInput;
+    public float verticalInput;
     private void HandleMovement()
     {
    
         //currentInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
 
         moveDirection = transform.TransformDirection(new Vector3(horizontalInput/3, verticalVelocity, (verticalInput > 0.1f ? verticalInput: verticalInput/3)) * flySpeed);
 
@@ -208,7 +209,8 @@ public class FalconController : MonoBehaviour
 
     private void HandleHeadBobing()
     {
-        if ((moveDirection.x > 0.1f && Mathf.Abs(moveDirection.z) > 0.1f) || moveDirection.x > 0.1f)
+        Debug.Log(verticalInput);
+        if (verticalInput > 0.1f)
         {
             isFlying = true;
            

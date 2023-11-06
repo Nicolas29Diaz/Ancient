@@ -28,7 +28,7 @@ public class PlayerController1 : MonoBehaviour
     public float walkSpeed = 3f;
     public float runSpeed = 5f;
     public float crouchSpeed = 1.5f;
-    public float runCrouchSpeed = 3.5f;
+    public float runCrouchSpeed = 2.5f;
 
     [Header("Stamina")]
     public float actualStamina;
@@ -64,8 +64,19 @@ public class PlayerController1 : MonoBehaviour
     private float defauktXPos = 0;
     private float timerBob = 0;
 
+    [Header("Crouch")]
+    [SerializeField] private float crouchHeight = 0.5f;
+    [SerializeField] private Vector3 crouchingCenter = new Vector3(0, 0.5f, 0);
 
-    [Header("HeadBobing")]
+    [SerializeField] private float standingHeight = 2f;
+    [SerializeField] private Vector3 standingCenter = new Vector3(0, 0f, 0);
+
+    [SerializeField] private float timeToCrouch = 0.5f;
+    [SerializeField] private bool duringCrouchAnim;
+
+
+
+    [Header("Sound")]
     [SerializeField] private float baseStepSpeed = 0.5f;
     [SerializeField] private float crouchStepMultiplier = 1.5f;
     [SerializeField] private float sprintStepMultiplier = 0.6f;
@@ -255,47 +266,48 @@ public class PlayerController1 : MonoBehaviour
         //readyToJump = true;
     }
 
+   
+
     private void HandleCrouching()
     {
-        if (Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(crouchKey) && !duringCrouchAnim)
         {
-            
-            Crouching();
-            defauktYPos = playerCamera.transform.localPosition.y;
-            defauktXPos = playerCamera.transform.localPosition.x;
-            crouching = true;
+            StartCoroutine(CrouchStand());
+        }
 
-           
-        }
-        else if (Input.GetKeyUp(crouchKey) && upCollision)
-        {
-            
-            Crouching();
-            defauktYPos = playerCamera.transform.localPosition.y;
-            defauktXPos = playerCamera.transform.localPosition.x;
-            crouching = true;
-        }
-        else if (Input.GetKeyUp(crouchKey) && !upCollision)
-        {
-            NoCrouching();
-            defauktYPos = playerCamera.transform.localPosition.y;
-            defauktXPos = playerCamera.transform.localPosition.x;
-            crouching = false;
-        }
     }
-    private void Crouching()
+    private IEnumerator CrouchStand()
     {
-        characterController.height = 0.5f;
-        //characterController.center = new Vector3(0, -0.5f, 0);
-        playerCamera.transform.localPosition = new Vector3(0, 0.3f, 0);
-        Debug.DrawRay(characterController.transform.position, Vector3.down * 3, Color.red);
+        if (crouching && Physics.Raycast(playerCamera.transform.position, Vector3.up, 2f))
+        {
+            yield break;
+        }
+
+        duringCrouchAnim = true;
+        float timeElapsed = 0;
+        float targetHeight = crouching ? standingHeight : crouchHeight;
+        float currentHight = characterController.height;
+        Vector3 targetCenter = crouching ? standingCenter : crouchingCenter;
+        Vector3 currentCenter = characterController.center;
+        while(timeElapsed < timeToCrouch)
+        {
+            characterController.height = Mathf.Lerp(currentHight, targetHeight, timeElapsed/timeToCrouch);
+            characterController.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed / timeToCrouch);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        characterController.height = targetHeight;
+        characterController.center = targetCenter;
+
+        crouching = !crouching;
+        duringCrouchAnim = false;
+
+
+
     }
-    private void NoCrouching()
-    {
-        characterController.height = 2f;
-        characterController.center = new Vector3(0, 0, 0);
-        playerCamera.transform.localPosition = new Vector3(0, 0.7f, 0);
-    }
+   
+ 
 
     private void HandleStamina()
     {

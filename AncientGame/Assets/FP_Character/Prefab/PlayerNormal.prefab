@@ -6010,8 +6010,8 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 5
   crouchSpeed: 1.5
-  runCrouchSpeed: 3.5
-  actualStamina: 0
+  runCrouchSpeed: 2.5
+  actualStamina: 50.003323
   velRegainStamina: 1
   maxStamina: 50
   jumpForce: 3
@@ -6023,10 +6023,16 @@ MonoBehaviour:
   walkBobSpeed: 10
   walkBobAmplitude: 0.05
   sprintBobSpeed: 13
-  sprintBobAmplitude: 0.1
+  sprintBobAmplitude: 0.08
   crouchBobSpeed: 5
-  crouchBobAmplitude: 0.025
-  frequencyBob: 10
+  crouchBobAmplitude: 0.06
+  frequencyBob: 1.2
+  crouchHeight: 1
+  crouchingCenter: {x: 0, y: 0.2, z: 0}
+  standingHeight: 2
+  standingCenter: {x: 0, y: 0, z: 0}
+  timeToCrouch: 0.15
+  duringCrouchAnim: 0
   baseStepSpeed: 0.5
   crouchStepMultiplier: 1.5
   sprintStepMultiplier: 0.6
