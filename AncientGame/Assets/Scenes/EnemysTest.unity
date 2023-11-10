@@ -286,7 +286,6 @@ MonoBehaviour:
   lastKnowTargetPosition: {x: 0, y: 0, z: 0}
   stateBoolVariable: 0
   stateTimeElapsed: 0
-  audioSource: {fileID: 0}
 --- !u!114 &131233585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +311,7 @@ MonoBehaviour:
   edgeResolveIterations: 4
   edgeDstThreshold: 0.5
   viewMeshFilter: {fileID: 458102772}
+  audioSource: {fileID: 0}
 --- !u!1 &186387406
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +857,7 @@ GameObject:
   - component: {fileID: 826194802}
   - component: {fileID: 826194801}
   - component: {fileID: 826194800}
+  - component: {fileID: 826194805}
   m_Layer: 3
   m_Name: Grabbable
   m_TagString: CanLift
@@ -958,6 +959,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &826194805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826194798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67bb39c5dea1b74ebec731b9c2fde66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noiseLevelAtMaxSpeed: 1
+  maxSpeed: 10
+  noiseLevel: 0
 --- !u!1 &1010402371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1675,21 @@ MonoBehaviour:
   falconObj: {fileID: 1992246778}
   playerObj: {fileID: 1862461877}
   heightSpawn: 10
+--- !u!114 &1862461886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862461877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67bb39c5dea1b74ebec731b9c2fde66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noiseLevelAtMaxSpeed: 1
+  maxSpeed: 10
+  noiseLevel: 0
 --- !u!1001 &1867024631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1873,6 +1904,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &1867024645
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867024633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1867024646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867024633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b46176ac337494a8bdd1227e95cd72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRange: 10
+  possibleTarget: {fileID: 0}
+  noiseLevel: 0.35
 --- !u!1 &1924056540
 GameObject:
   m_ObjectHideFlags: 0

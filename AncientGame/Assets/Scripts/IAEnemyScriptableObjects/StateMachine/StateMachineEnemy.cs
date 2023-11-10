@@ -2,8 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
+
 
 public class StateMachineEnemy : MonoBehaviour
 {
@@ -21,7 +24,11 @@ public class StateMachineEnemy : MonoBehaviour
 
     private bool _isActive;
 
+
     
+
+
+
 
     public void Awake()
     {
@@ -51,8 +58,6 @@ public class StateMachineEnemy : MonoBehaviour
         }
     }
 
-    
-
     public bool HasTimeElapsed(float duration)
     {
         stateTimeElapsed += Time.deltaTime;
@@ -72,6 +77,8 @@ public class StateMachineEnemy : MonoBehaviour
         stateBoolVariable = false;
         stateTimeElapsed = 0;
     }
+
+
 
     private void OnDrawGizmos()
     {

@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b67cab202eba1c45a0d98777431393c, type: 3}
-  m_Name: New Enemy Stats
+  m_Script: {fileID: 11500000, guid: 5c893a3760c2d774492a2b14064bc73a, type: 3}
+  m_Name: EarDecision
   m_EditorClassIdentifier: 
-  walSpeed: 1.5
-  runSpeed: 3
-  attackRate: 4
-  searchDuration: 5
-  searchingTurningSpeed: 180
