@@ -11,8 +11,14 @@ public class ChangeToPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            falconObj.SetActive(false);
-            playerObj.SetActive(true);
+            Change();
         }
+    }
+
+    public void Change()
+    {
+        falconObj.SetActive(false);
+        playerObj.SetActive(true);
+
     }
 }

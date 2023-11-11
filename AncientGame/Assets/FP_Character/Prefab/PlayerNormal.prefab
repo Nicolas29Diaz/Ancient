@@ -5843,8 +5843,6 @@ GameObject:
   - component: {fileID: 6639666673389784210}
   - component: {fileID: 6639666673389784222}
   - component: {fileID: 6639666673389784211}
-  - component: {fileID: 6639666673389784219}
-  - component: {fileID: 6639666673389784220}
   m_Layer: 0
   m_Name: PlayerNormal
   m_TagString: Player
@@ -6036,32 +6034,6 @@ MonoBehaviour:
   baseStepSpeed: 0.5
   crouchStepMultiplier: 1.5
   sprintStepMultiplier: 0.6
---- !u!114 &6639666673389784219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6639666673389784175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14203faed5d2bb49a8896486eb16651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: {fileID: 6639666672756994387}
---- !u!114 &6639666673389784220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6639666673389784175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38566f77a5d5de140a79b4d78d792afb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashLight: {fileID: 6639666673041288434}
 --- !u!1 &6639666673513644922
 GameObject:
   m_ObjectHideFlags: 0

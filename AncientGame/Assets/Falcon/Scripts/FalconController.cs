@@ -209,7 +209,7 @@ public class FalconController : MonoBehaviour
 
     private void HandleHeadBobing()
     {
-        Debug.Log(verticalInput);
+        
         if (verticalInput > 0.1f)
         {
             isFlying = true;
