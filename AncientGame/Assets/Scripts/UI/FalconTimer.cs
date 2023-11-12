@@ -9,6 +9,8 @@ public class FalconTimer : MonoBehaviour
     public GameObject player;
     public GameObject falcon;
     public Slider slider;
+    public GameObject energyObj;
+    public ParticleSystem particles;
 
     [SerializeField] private float maxTimer = 10f; // Max time in seconds
     [SerializeField] private float actualTime; // Current time in seconds
@@ -24,11 +26,15 @@ public class FalconTimer : MonoBehaviour
     void Start()
     {
         SetActivePlayer();
-        slider.maxValue = maxTimer;
+        
+        energyObj.SetActive(false);
+        particles = energyObj.GetComponentInChildren<ParticleSystem>();
     }
 
     void Update()
     {
+        slider.maxValue = maxTimer;
+
         if (Input.GetKeyDown(KeyCode.X))
         {
             if (isPlayerActive && isCharged)
@@ -66,15 +72,20 @@ public class FalconTimer : MonoBehaviour
         player.SetActive(false);
         falcon.SetActive(true); 
         isPlayerActive = false;
-
-    }
+        energyObj.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        energyObj.SetActive(true);
+        particles.time = 80f;
+        particles.Play();
+    }   
 
     void ExitFalcon()
     {
         player.SetActive(true);
         falcon.SetActive(false);
         isPlayerActive = true;
-   ;
+
+        particles.Stop();
+        energyObj.SetActive(false);
     }
 
     void StartCharging()
@@ -110,4 +121,7 @@ public class FalconTimer : MonoBehaviour
             slider.value = actualTime;
         }
     }
+
+
+
 }
