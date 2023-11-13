@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 69586718}
   - component: {fileID: 69586717}
   m_Layer: 0
-  m_Name: FlyAreaLimiter
+  m_Name: AreaLimiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
