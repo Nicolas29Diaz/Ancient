@@ -14,4 +14,15 @@ public class EmpezarJuego : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadSceneAsync(1);
+        }
+    }
+
+
 }
