@@ -7,7 +7,12 @@ public class FinalAnim : MonoBehaviour
     public AudioSource cameraAudioSource;
     public AudioClip alarmSound;
     public AudioClip[] footSounds;
+    public Animator fadeOutAnim;
 
+    private void Awake()
+    {
+        fadeOutAnim.enabled = false;
+    }
     public void AlarmSound()
     {
         cameraAudioSource.PlayOneShot(alarmSound,0.2f);
@@ -21,5 +26,10 @@ public class FinalAnim : MonoBehaviour
     public void FinalScene()
     {
         SceneManager.LoadSceneAsync(2);
+    }
+
+    public void FadeOut()
+    {
+        fadeOutAnim.enabled = true;
     }
 }
