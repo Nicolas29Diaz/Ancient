@@ -10,6 +10,7 @@ TagManager:
   - Stone
   - CanLift
   - RotatingObject
+  - Enemy
   layers:
   - Default
   - TransparentFX

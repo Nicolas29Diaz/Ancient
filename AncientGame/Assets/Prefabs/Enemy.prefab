@@ -74,6 +74,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier_marine
       objectReference: {fileID: 0}
+    - target: {fileID: 128588, guid: 5670a6053a802c84a9dc680c8c3dbd0f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 442412, guid: 5670a6053a802c84a9dc680c8c3dbd0f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -165,6 +169,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 442412, guid: 5670a6053a802c84a9dc680c8c3dbd0f, type: 3}
   m_PrefabInstance: {fileID: 1297418909419619314}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1297418909419648446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 128588, guid: 5670a6053a802c84a9dc680c8c3dbd0f, type: 3}
+  m_PrefabInstance: {fileID: 1297418909419619314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &3588397730025065721
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297418909419648446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3.11
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 1.25}
 --- !u!1 &1297418909419658538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 106200, guid: 5670a6053a802c84a9dc680c8c3dbd0f, type: 3}
