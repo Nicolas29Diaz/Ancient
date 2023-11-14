@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-using UnityEditor;
+//using UnityEditor;
 
 public class FinalSceneController : MonoBehaviour
 {
@@ -29,7 +29,7 @@ public class FinalSceneController : MonoBehaviour
             if(timer >= duration)
             {
                 Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false;
+                //UnityEditor.EditorApplication.isPlaying = false;
             }
             else if(timer >= fadeOut)
             {
