@@ -11,6 +11,9 @@ TagManager:
   - CanLift
   - RotatingObject
   - Enemy
+  - Final
+  - WoodFloor
+  - GrassFloor
   layers:
   - Default
   - TransparentFX

@@ -162,12 +162,12 @@ public class PlayerController1 : MonoBehaviour
                     {
                         case "GrassFloor":
                             Debug.Log("SONAR4");
-                            footStepAudioSource.PlayOneShot(grassClips[UnityEngine.Random.Range(0, grassClips.Length - 1)]);
+                            footStepAudioSource.PlayOneShot(grassClips[UnityEngine.Random.Range(0, grassClips.Length - 1)],0.1f);
                             break;
 
                         case "WoodFloor":
 
-                            footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, grassClips.Length - 1)]);
+                            footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)],0.2f);
                             break;
 
                         default:

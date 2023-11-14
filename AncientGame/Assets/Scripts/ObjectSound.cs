@@ -7,9 +7,13 @@ public class ObjectSound : MonoBehaviour
 
     public float minRelativeVelocity = 2f;  // La velocidad mínima para el volumen mínimo
     public float maxRelativeVelocity = 20f; // La velocidad máxima para el volumen máximo
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     public AudioClip[] clips;
 
+    private void Start()
+    {
+        audioSource = transform.GetComponent<AudioSource>();
+    }
     private void OnCollisionEnter(Collision collision)
     {   
         
