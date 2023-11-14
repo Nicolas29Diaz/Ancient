@@ -25,8 +25,12 @@ public class StateMachineEnemy : MonoBehaviour
     private bool _isActive;
 
 
-    
 
+    private void Start()
+    {
+        _isActive = true;
+        agent.enabled = _isActive;
+    }
 
 
 
@@ -42,12 +46,6 @@ public class StateMachineEnemy : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    public void InitializeIA(bool activate, List<Transform> waypointList)
-    {
-        waypoints = waypointList;
-        _isActive = activate;
-        agent.enabled = _isActive;
-    }
 
     public void TransicionToState(States nextState)
     {

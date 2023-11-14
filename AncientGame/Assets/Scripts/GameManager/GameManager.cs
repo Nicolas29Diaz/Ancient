@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         _controllers = FindObjectsOfType<StateMachineEnemy>();
         foreach (var controller in _controllers)
         {
-            controller.InitializeIA(true, waypoints);
+            
         }
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b67cab202eba1c45a0d98777431393c, type: 3}
   m_Name: New Enemy Stats
   m_EditorClassIdentifier: 
-  walSpeed: 1.5
-  runSpeed: 3
+  walSpeed: 1.9
+  runSpeed: 3.5
   attackRate: 4
   searchDuration: 5
   searchingTurningSpeed: 180
